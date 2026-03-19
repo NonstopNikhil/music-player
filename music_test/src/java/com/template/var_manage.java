@@ -7,12 +7,19 @@ import javafx.util.Duration;
 import java.util.Objects;
 
 public class var_manage {
+
+    double max_time;
     int minute,second,minute_t,second_t;
-    String minute_s,second_s,total_s;
+
+    String minute_s,second_s;
+    String m = "" , s = "";
+
     MediaPlayer mediaPlayer;
     Media media;
+
     Duration duration;
     boolean whatever = true;
+
     Image pause = new Image(Objects.requireNonNull(getClass().getResourceAsStream("pause.png")));
     Image play = new Image(Objects.requireNonNull(getClass().getResourceAsStream("play.png")));
     Image prev = new Image(Objects.requireNonNull(getClass().getResourceAsStream("prev.png")));

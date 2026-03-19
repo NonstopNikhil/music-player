@@ -28,51 +28,49 @@
    <center>
       <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="334.0" prefWidth="503.0">
          <children>
-            <Label text="Label" />
-            <Label text="Label" />
-            <Label layoutX="10.0" layoutY="10.0" text="Label" />
-            <Label layoutX="10.0" layoutY="28.0" prefHeight="32.0" prefWidth="83.0" text="Label" />
-            <Label layoutX="10.0" layoutY="46.0" text="Label" />
-            <Label layoutX="10.0" layoutY="64.0" maxHeight="1.7976931348623157E308" prefHeight="116.0" prefWidth="556.0" text="Label" VBox.vgrow="ALWAYS" />
-            <Label layoutX="10.0" layoutY="82.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="276.0" prefWidth="525.0" text="Label" VBox.vgrow="ALWAYS" />
-            <HBox prefHeight="38.0" prefWidth="503.0" VBox.vgrow="ALWAYS">
+            <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="358.0" prefWidth="503.0" VBox.vgrow="ALWAYS" />
+            <HBox maxHeight="1.7976931348623157E308" prefHeight="38.0" prefWidth="503.0" VBox.vgrow="NEVER">
                <children>
-                  <Label fx:id="time_label" alignment="BOTTOM_LEFT" prefHeight="27.0" prefWidth="39.0" text="Play Time" HBox.hgrow="ALWAYS" />
-                  <StackPane maxWidth="1.7976931348623157E308" prefHeight="150.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                  <Label fx:id="time_label" alignment="CENTER" maxHeight="1.7976931348623157E308" prefHeight="16.0" prefWidth="38.0" text="Play Time" HBox.hgrow="ALWAYS" />
+                  <StackPane prefHeight="150.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                      <children>
                         <ProgressBar fx:id="progressbar" maxWidth="1.7976931348623157E308" prefHeight="10.0" prefWidth="433.0" progress="0.0" />
-                        <Slider fx:id="time_slider" prefHeight="27.0" prefWidth="433.0" />
+                        <Slider fx:id="time_slider" prefHeight="27.0" prefWidth="388.0" />
                      </children>
                   </StackPane>
-                  <Label fx:id="time_label2" alignment="BOTTOM_RIGHT" prefHeight="27.0" prefWidth="31.0" text="Total time" HBox.hgrow="ALWAYS" />
+                  <Label fx:id="time_label2" alignment="CENTER" contentDisplay="RIGHT" maxHeight="1.7976931348623157E308" prefHeight="16.0" prefWidth="42.0" text="Total time" HBox.hgrow="NEVER" />
                </children>
             </HBox>
-            <HBox prefHeight="46.0" prefWidth="503.0">
+            <HBox fx:id="hbox_controller" prefHeight="46.0" prefWidth="503.0" VBox.vgrow="NEVER">
                <children>
-                  <Label fx:id="title" maxWidth="1.7976931348623157E308" prefHeight="84.0" prefWidth="151.0" text="Title" HBox.hgrow="ALWAYS">
+                  <Label fx:id="title" graphicTextGap="3.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="84.0" prefWidth="151.0" text="Title" textAlignment="JUSTIFY" HBox.hgrow="ALWAYS">
                      <font>
                         <Font name="SansSerif Regular" size="21.0" />
-                     </font></Label>
-                  <Button fx:id="prev" minWidth="42.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="70.0" HBox.hgrow="ALWAYS">
+                     </font>
+                  </Label>
+                  <Button fx:id="prev_button" minWidth="42.0" mnemonicParsing="false" onAction="#prev_func" prefHeight="51.0" prefWidth="70.0" HBox.hgrow="ALWAYS">
                      <graphic>
-                        <ImageView fx:id="prev_png" fitHeight="80.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" />
-                     </graphic></Button>
-                  <Button fx:id="play_button" minWidth="40.0" mnemonicParsing="false" onAction="#play" prefHeight="51.0" prefWidth="70.0" HBox.hgrow="ALWAYS">
-                     <graphic>
-                        <ImageView fx:id="play_png" fitHeight="80.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="prev_png" fitHeight="80.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
                      </graphic>
                   </Button>
-                  <Button fx:id="next" minWidth="40.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="70.0" HBox.hgrow="ALWAYS">
+                  <Button fx:id="play_button" minWidth="40.0" mnemonicParsing="false" onAction="#play_func" prefHeight="51.0" prefWidth="70.0" HBox.hgrow="ALWAYS">
                      <graphic>
-                        <ImageView fx:id="next_png" fitHeight="80.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" />
-                     </graphic></Button>
+                        <ImageView fx:id="play_png" fitHeight="80.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="next_button" minWidth="40.0" mnemonicParsing="false" onAction="#next_func" prefHeight="51.0" prefWidth="70.0" HBox.hgrow="ALWAYS">
+                     <graphic>
+                        <ImageView fx:id="next_png" fitHeight="80.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Button>
                   <Label maxWidth="1.7976931348623157E308" prefHeight="97.0" prefWidth="28.0" HBox.hgrow="ALWAYS" />
                   <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="SOMETIMES">
                      <children>
                         <Label fx:id="volume_label" alignment="BOTTOM_RIGHT" prefHeight="32.0" prefWidth="93.0" text="0%" VBox.vgrow="ALWAYS">
                            <font>
                               <Font name="SansSerif Regular" size="14.0" />
-                           </font></Label>
+                           </font>
+                        </Label>
                         <StackPane prefHeight="25.0" prefWidth="100.0">
                            <children>
                               <ProgressBar fx:id="vol_progressbar" prefHeight="9.0" prefWidth="100.0" progress="0.0" />
