@@ -1,0 +1,13 @@
+#play_button{
+    -fx-background-color: transparent;
+}
+#next{
+    -fx-background-color: transparent;
+}
+#prev{
+    -fx-background-color: transparent;
+}
+.slider .track{
+    -fx-background-color: transparent;
+}
+
