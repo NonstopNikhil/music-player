@@ -98,13 +98,12 @@ public class MainController extends var_manage
 
                     mediaPlayer.seek(Duration.seconds(time_slider.getValue()));
                     if(mediaPlayer.getStatus() == MediaPlayer.Status.PLAYING) {
+                        whatever = false;
                         play_png.setImage(pause);
                         mediaPlayer.play();
                     }
                     else {
-                        mediaPlayer.pause();
                         mediaPlayer.play();
-                        mediaPlayer.pause();
                     }
                 }
             }
@@ -149,7 +148,7 @@ public class MainController extends var_manage
     }
 
     public void next_func() {}
-    
+
     public void prev_func() {}
 
 }

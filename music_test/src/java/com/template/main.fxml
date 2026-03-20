@@ -3,7 +3,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -14,13 +16,13 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.template.MainController">
    <left>
-      <Pane prefHeight="308.0" prefWidth="45.0" BorderPane.alignment="CENTER" />
+      <Pane prefHeight="326.0" prefWidth="15.0" BorderPane.alignment="CENTER" />
    </left>
    <right>
-      <Pane prefHeight="308.0" prefWidth="52.0" BorderPane.alignment="CENTER" />
+      <Pane prefHeight="326.0" prefWidth="15.0" BorderPane.alignment="CENTER" />
    </right>
    <top>
-      <Pane prefHeight="47.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+      <Pane prefHeight="38.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
    </top>
    <bottom>
       <Pane prefHeight="27.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
@@ -28,8 +30,39 @@
    <center>
       <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="334.0" prefWidth="503.0">
          <children>
-            <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="358.0" prefWidth="503.0" VBox.vgrow="ALWAYS" />
-            <HBox maxHeight="1.7976931348623157E308" prefHeight="38.0" prefWidth="503.0" VBox.vgrow="NEVER">
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="389.0" prefWidth="570.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox maxHeight="1.7976931348623157E308" maxWidth="-Infinity" prefHeight="248.0" prefWidth="170.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label maxHeight="-Infinity" prefHeight="28.0" prefWidth="166.0" text="Media Player" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font name="SansSerif Regular" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label maxHeight="1.7976931348623157E308" prefHeight="46.0" prefWidth="169.0" text="Label" VBox.vgrow="ALWAYS" />
+                        <Label maxHeight="1.7976931348623157E308" prefHeight="46.0" prefWidth="169.0" text="Label" VBox.vgrow="ALWAYS" />
+                        <Label maxHeight="1.7976931348623157E308" prefHeight="46.0" prefWidth="169.0" text="Label" />
+                        <Label maxHeight="1.7976931348623157E308" prefHeight="46.0" prefWidth="169.0" text="Label" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+                  <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="214.0" prefWidth="408.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="33.0" prefWidth="404.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Label maxWidth="1.7976931348623157E308" prefHeight="17.0" prefWidth="21.0" />
+                              <Button mnemonicParsing="false" prefHeight="22.0" prefWidth="69.0" text="Add Folder" />
+                              <Label maxWidth="1.7976931348623157E308" prefHeight="17.0" prefWidth="140.0" HBox.hgrow="ALWAYS" />
+                              <TextField maxWidth="1.7976931348623157E308" text="Search" />
+                              <Button mnemonicParsing="false" prefHeight="22.0" prefWidth="29.0" text="Search button" />
+                           </children>
+                        </HBox>
+                        <Label maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="2.0" prefWidth="404.0" VBox.vgrow="ALWAYS" />
+                        <ScrollPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="225.0" prefWidth="404.0" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox maxHeight="1.7976931348623157E308" prefHeight="38.0" prefWidth="503.0" VBox.vgrow="ALWAYS">
                <children>
                   <Label fx:id="time_label" alignment="CENTER" maxHeight="1.7976931348623157E308" prefHeight="16.0" prefWidth="38.0" text="Play Time" HBox.hgrow="ALWAYS" />
                   <StackPane prefHeight="150.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
@@ -41,7 +74,7 @@
                   <Label fx:id="time_label2" alignment="CENTER" contentDisplay="RIGHT" maxHeight="1.7976931348623157E308" prefHeight="16.0" prefWidth="42.0" text="Total time" HBox.hgrow="NEVER" />
                </children>
             </HBox>
-            <HBox fx:id="hbox_controller" prefHeight="46.0" prefWidth="503.0" VBox.vgrow="NEVER">
+            <HBox fx:id="hbox_controller" maxHeight="-Infinity" prefHeight="46.0" prefWidth="503.0" VBox.vgrow="ALWAYS">
                <children>
                   <Label fx:id="title" graphicTextGap="3.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="84.0" prefWidth="151.0" text="Title" textAlignment="JUSTIFY" HBox.hgrow="ALWAYS">
                      <font>
