@@ -6,44 +6,45 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Slider;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
 import javafx.util.Duration;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 
 import javax.swing.*;
 
 
 public class MainController extends var_manage
 {
-    @FXML
-    private Slider time_slider;
-    @FXML
-    private Slider volume_control;
-    @FXML
-    private Label time_label;
-    @FXML
-    private Label volume_label;
-    @FXML
-    private Label time_label2;
-    @FXML
-    private Label title;
-    @FXML
-    private ImageView play_png;
-    @FXML
-    private ImageView prev_png;
-    @FXML
-    private ImageView next_png;
-    @FXML
-    private ProgressBar progressbar;
-    @FXML
-    private ProgressBar vol_progressbar;
-    @FXML
-    private void initialize()
+    @FXML private Slider time_slider;
+    @FXML private Slider volume_control;
+    @FXML private Label time_label;
+    @FXML private Label volume_label;
+    @FXML private Label time_label2;
+    @FXML private Label title;
+    @FXML private ImageView play_png;
+    @FXML private ImageView prev_png;
+    @FXML private ImageView next_png;
+    @FXML private ProgressBar progressbar;
+    @FXML private ProgressBar vol_progressbar;
+    @FXML private VBox center_vbox;
+
+    @FXML private void initialize()
     {
+
+        //center_vbox.getChildren().add(title);
+
 
         System.out.println("FXML loaded successfully!");
         String path = "src/resourses/com/template/its_nothing.mp3";
@@ -53,6 +54,10 @@ public class MainController extends var_manage
         mediaPlayer = new MediaPlayer(media);
         duration = mediaPlayer.getCurrentTime();
         mediaPlayer.setVolume(volume_control.getValue() / 100);
+
+        media.durationProperty().addListener((obs,old,New)->{
+            System.out.println("Duration "+ New.toSeconds() );
+        });
 
         play_png.setImage(play);
         prev_png.setImage(prev);
@@ -150,5 +155,25 @@ public class MainController extends var_manage
     public void next_func() {}
 
     public void prev_func() {}
+
+    public void add_fold() {
+
+        FileChooser chooser = new FileChooser();
+        chooser.setTitle("Add Music");
+        chooser.setInitialDirectory(new File(System.getProperty("user.home")));
+        chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("All Files", "*.*"));
+        chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Music", "*.mp3*"));
+
+        List <File> list = chooser.showOpenMultipleDialog(null);
+
+        if (list != null) {
+            for (File f: list){
+                System.out.println(f.getAbsolutePath());
+            }
+        }
+        else {
+            System.out.println("Nope");
+        }
+    }
 
 }
